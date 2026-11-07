@@ -113,6 +113,19 @@ The matrices are written to `pearson_matrix.csv`, `spearman_matrix.csv` and `dco
 
 accuracy, completeness, linguistic accessibility, organization/coherence, explanation/conceptual development, learning-objective alignment, practice/application, cognitive engagement, learner appropriateness/inclusivity, visual/multimodal representation, usability/accessibility, credibility/provenance, assessment/feedback, interactivity/collaboration.
 
+## Future updates
+
+The longer-term aim is to give LLM and ML researchers a tested, multi-dimensional way to measure and improve the quality of educational text that models produce.
+
+- **Multi-dimensional evaluation instead of one score.** Most LLM evaluation collapses quality into a single number or a correctness check. If the 14 criteria prove statistically independent, they can be used as separate evaluation axes, and the correlation analysis here shows which ones are redundant and can be merged.
+- **Benchmarking models on educational writing.** Score output from different LLMs on the same topics and compare them criterion by criterion, to show where a model is fluent but weak, for example accurate yet lacking practice, assessment or feedback.
+- **Reward and preference signals.** Independent criteria could serve as separate reward dimensions for fine-tuning (multi-objective RLHF), so a model can be trained to improve one aspect, such as conceptual development, without degrading another.
+- **Studying LLM-as-judge.** The scored dataset lets researchers measure judge behaviour on a rubric: score variance across runs and models, tendency to give high marks, agreement with human raters, and sensitivity to prompt wording.
+- **A labelled dataset.** About 200 blogs scored on 14 criteria, with a trusted reference text, is a small testbed for training or evaluating rubric-based scorers and for studying how criteria correlate.
+- **Reference-grounded evaluation.** Accuracy and completeness are judged against a trusted source, which supports research on grounding and on detecting hallucination or missing coverage in generated explanations.
+- **Low-barrier reproduction.** The browser route needs no API keys, so researchers without funding can replicate the study. An optional API mode would suit larger runs.
+- **Wider coverage and reproducibility.** More subjects, grade levels, languages and formats (lecture notes, quizzes, tutoring dialogues), plus published results, analysis code and tests.
+
 ## Limitations
 
 - **Sample size.** The dataset is about 200 blogs on a single topic (Newton's laws), so findings may not carry over to other subjects. If you score only a subset, note that dCor reads high below roughly 30 blogs; prefer Spearman there.
