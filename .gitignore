@@ -1,0 +1,14 @@
+# Local environment and secrets
+.venv/
+__pycache__/
+.DS_Store
+state/
+
+# Data, inputs and outputs: only code and docs are published
+blogs/
+blog/
+*.txt
+!requirements.txt
+*.csv
+*.pdf
+*.zip
