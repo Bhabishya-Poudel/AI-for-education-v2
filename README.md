@@ -48,7 +48,7 @@ python save_login.py              # once: sign in, creates state/auth.json
 python score_blogs.py             # score every blog in blogs/ -> scores.csv
 python score_blogs.py 3-7         # score only Blog3 ... Blog7
 python score_blogs.py Blog5.txt   # test mode: one blog -> test_scores.csv
-python run_batches.py 1 5 100     # blogs 1-100 in batches of 5
+python run_batches.py 1 5 200     # blogs 1-200 in batches of 5
 python analyze.py                 # scores.csv -> *_matrix.csv + report
 ```
 
@@ -115,7 +115,7 @@ accuracy, completeness, linguistic accessibility, organization/coherence, explan
 
 ## Limitations
 
-- **Small samples.** With fewer than 10 blogs, results are only a smoke test. dCor is biased upward below about 30 blogs; prefer Spearman.
+- **Sample size.** The dataset is about 200 blogs on a single topic (Newton's laws), so findings may not carry over to other subjects. If you score only a subset, note that dCor reads high below roughly 30 blogs; prefer Spearman there.
 - **LLM scoring is noisy.** Each blog is scored by a single model response, and results may vary across models and prompt wording.
 - **Fragile to UI changes.** The script depends on Gemini's page structure and on a browser session; it is not a supported API.
 - **Reference-dependent.** Accuracy and completeness are judged against the reference file, so the blogs must cover that topic.
